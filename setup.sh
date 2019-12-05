@@ -50,7 +50,7 @@ echo "##################################################
 ##    UNAUTHORIZED USE IS STRICLY FORBIDDEN     ##
 ##################################################" > /etc/motd
 
-apt-get install cockpit
+apt-get install -y cockpit
 
 mkdir -p /srv/daemon /srv/daemon-data
 
