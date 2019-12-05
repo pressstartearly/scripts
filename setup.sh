@@ -39,6 +39,7 @@ ufw allow 25568
 ufw allow 25569
 ufw allow 8080
 ufw allow 2022
+ufw allow 9090
 ufw default deny incoming
 ufw default allow outgoing
 ufw enable
@@ -48,6 +49,8 @@ echo "##################################################
 ## THIS SERVER IS PROPERTY OF DEDICATED MC, LLC ##
 ##    UNAUTHORIZED USE IS STRICLY FORBIDDEN     ##
 ##################################################" > /etc/motd
+
+apt-get install cockpit
 
 mkdir -p /srv/daemon /srv/daemon-data
 
