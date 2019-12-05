@@ -43,6 +43,11 @@ ufw default deny incoming
 ufw default allow outgoing
 ufw enable
 
+#--- MOTD ----
+echo "##################################################
+## THIS SERVER IS PROPERTY OF DEDICATED MC, LLC ##
+##    UNAUTHORIZED USE IS STRICLY FORBIDDEN     ##
+##################################################" > /etc/motd
 
 mkdir -p /srv/daemon /srv/daemon-data
 
