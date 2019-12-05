@@ -35,6 +35,8 @@ git remote add origin https://github.com/pressstartearly/daemon.git
 
 git pull origin master
 
+npm install --only=production
+
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt update
 sudo apt install certbot
@@ -44,3 +46,10 @@ read ccdomain
 
 certbot certonly -d $ccdomain
 
+#write out current crontab
+crontab -l > mycron
+#echo new cron into cron file
+echo "@monthly certbot renew" >> mycron
+#install new cron file
+crontab mycron
+rm mycron
