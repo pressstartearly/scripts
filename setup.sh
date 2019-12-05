@@ -29,4 +29,18 @@ mkdir -p /srv/daemon /srv/daemon-data
 
 cd /srv/daemon
 
-git clone git://github.com/pressstartearly/daemon.git
+git init
+
+git remote add origin https://github.com/pressstartearly/daemon.git
+
+git pull origin master
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt update
+sudo apt install certbot
+
+echo "What is the domain name for this node?"
+read ccdomain
+
+certbot certonly -d $ccdomain
+
