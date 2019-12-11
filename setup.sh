@@ -50,6 +50,54 @@ echo "##################################################
 ##    UNAUTHORIZED USE IS STRICLY FORBIDDEN     ##
 ##################################################" > /etc/motd
 
+#--- CPU Govener ----
+echo " ### Hetzner Online GmbH - installimage
+# cpu frequency scaling
+ENABLE=\"true\"
+GOVERNOR=\"preformance\"
+MAX_SPEED=\"0\"
+MIN_SPEED=\"0\" " > /etc/default/cpufrequtils
+
+systemctl restart cpufrequtils
+
+#--- Update GRUB ---
+echo " # If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=\"nomodeset consoleblank=0 swapaccount=1\"
+GRUB_CMDLINE_LINUX=\"\"
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM=\"0x01234567,0xfefefefe,0x89abcdef,0xefefefef\"
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass \"root=UUID=xxx\" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY=\"true\"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE=\"480 440 1\" " > /etc/default/grub
+
+update-grub
+
+#--- Cockpit ---
+
 apt-get install -y cockpit
 
 mkdir -p /srv/daemon /srv/daemon-data
@@ -103,3 +151,9 @@ StartLimitInterval=600
 WantedBy=multi-user.target" >> /etc/systemd/system/wings.service
 
 systemctl enable --now wings
+
+echo "What shall this server be called?"
+read ccname
+echo "$ccname" > /etc/hostname
+
+restart now
