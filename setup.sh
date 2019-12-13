@@ -82,7 +82,7 @@ GRUB_CMDLINE_LINUX=\"\"
 
 # The resolution used on graphical terminal
 # note that you can use only modes which your graphic card supports via VBE
-# you can see them in real GRUB with the command `vbeinfo'
+# you can see them in real GRUB with the command 'vbeinfo'
 #GRUB_GFXMODE=640x480
 
 # Uncomment if you don't want GRUB to pass \"root=UUID=xxx\" parameter to Linux
