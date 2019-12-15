@@ -1,4 +1,5 @@
-backupName = backup-$HOSTNAME-date +"%Y-%m-%d-%T".zip
+datecc=$(date '+%d/%m/%Y %H:%M:%S');
+backupName=backup-$HOSTNAME-$datecc.zip
 
 zip /srv/daemon-data /srv/backups/$backupName
 
