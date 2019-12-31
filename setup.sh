@@ -1,6 +1,6 @@
 apt-get update
 
-apt install -y zip unzip tar make gcc g++ python python-dev curl gnupg
+apt install -y zip unzip tar make gcc g++ python python-dev curl gnupg git
 
 ## install apt tools
 apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
