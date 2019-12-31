@@ -112,9 +112,9 @@ git pull origin master
 
 npm install --only=production
 
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt update
-sudo apt install -y certbot
+add-apt-repository ppa:certbot/certbot
+apt update
+apt install -y certbot
 
 echo "What is the domain name for this node?"
 read ccdomain
