@@ -156,4 +156,4 @@ echo "What shall this server be called?"
 read ccname
 echo "$ccname" > /etc/hostname
 
-restart now
+reboot
