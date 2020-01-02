@@ -12,7 +12,11 @@ git rm --cached
 
 git add -A
 
+git stash
+
 git pull origin master
+
+git stash pop
 
 npm install --only=production
 
