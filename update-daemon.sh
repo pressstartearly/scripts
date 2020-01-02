@@ -1,5 +1,7 @@
 mkdir /backup/
 
+zip -r daemon.zip /srv/daemon
+
 cd /srv/daemon
 
 git rm --cached
