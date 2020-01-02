@@ -12,4 +12,6 @@ git remote add origin https://github.com/pressstartearly/daemon.git
 
 git pull origin master
 
+npm install --only=production
+
 systemctl restart wings
