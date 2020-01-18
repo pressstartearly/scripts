@@ -1,3 +1,4 @@
+systemctl restart wings
 cd /srv/daemon
 curl -Lo sftp-server https://github.com/pterodactyl/sftp-server/releases/download/v1.0.4/sftp-server
 chmod +x sftp-server
