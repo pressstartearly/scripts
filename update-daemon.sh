@@ -1,5 +1,7 @@
 mkdir /backup/
 
+git config --global user.email "caleb@dedicatedmc.io"
+
 zip -r daemon.zip /srv/daemon
 
 cd /srv/daemon
