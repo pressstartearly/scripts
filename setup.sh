@@ -148,7 +148,7 @@ Restart=on-failure
 StartLimitInterval=600
 
 [Install]
-WantedBy=multi-user.target" >> /etc/systemd/system/wings.service
+WantedBy=multi-user.target" > /etc/systemd/system/wings.service
 
 systemctl enable --now wings
 
