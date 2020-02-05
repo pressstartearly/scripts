@@ -1,3 +1,33 @@
+echo "                                                                         
+deb http://httpredir.debian.org/debian buster main non-free contrib
+deb-src http://httpredir.debian.org/debian buster main non-free contrib
+
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
+
+# buster-updates, previously known as 'volatile'
+# A network mirror was not selected during install.  The following entries
+# are provided as examples, but you should amend them as appropriate
+# for your mirror of choice.
+#
+# deb http://deb.debian.org/debian/ buster-updates main
+# deb-src http://deb.debian.org/debian/ buster-updates main
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.
+# deb http://archive.debian.org/debian/jessie main
+# deb-src http://archive.debian.org/debian/jessie main
+
+# deb http://security.debian.org jessie/updates main
+deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+# deb-src [arch=amd64] https://download.docker.com/linux/debian buster stable
+# deb-src http://security.debian.org jessie/updates main
+# deb-src [arch=amd64] https://download.docker.com/linux/debian buster stable
+" > /etc/apt/sources.list
+
 apt-get update
 
 apt install -y zip unzip tar make gcc g++ python python-dev curl gnupg git
