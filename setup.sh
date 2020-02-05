@@ -182,6 +182,8 @@ WantedBy=multi-user.target" > /etc/systemd/system/wings.service
 
 systemctl enable --now wings
 
+echo "The setup is almost completed. Don't forget to add the IPs, disable the internal SFTP server, and install the new SFTP server." 
+
 echo "What shall this server be called?"
 read ccname
 echo "$ccname" > /etc/hostname
