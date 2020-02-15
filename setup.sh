@@ -132,6 +132,7 @@ apt-get install -y cockpit
 
 mkdir -p /srv/daemon /srv/daemon-data
 
+mkdir /backup
 cd /srv/daemon
 
 git init
