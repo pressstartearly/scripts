@@ -7,3 +7,5 @@ MAX_SPEED=\"0\"
 MIN_SPEED=\"0\" " > /etc/default/cpufrequtils
 
 systemctl restart cpufrequtils
+
+cpufreq-info
