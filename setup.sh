@@ -84,7 +84,7 @@ echo "##################################################
 echo " ### Hetzner Online GmbH - installimage
 # cpu frequency scaling
 ENABLE=\"true\"
-GOVERNOR=\"preformance\"
+GOVERNOR=\"performance\"
 MAX_SPEED=\"0\"
 MIN_SPEED=\"0\" " > /etc/default/cpufrequtils
 
