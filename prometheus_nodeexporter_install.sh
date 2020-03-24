@@ -126,11 +126,3 @@ sudo systemctl enable prometheus
 sudo systemctl start prometheus
 
 echo "Done! Make sure that both apps are running properly and not giving any errors"
-
-# Node Exporter
-ufw allow from 116.203.120.249 to any port 9100
-
-# Prometheus
-ufw allow from 116.203.120.249 to any port 9090
-
-echo "UFW rules configurated"
