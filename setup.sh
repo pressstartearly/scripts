@@ -69,7 +69,6 @@ ufw allow 25568
 ufw allow 25569
 ufw allow 8080
 ufw allow 2022
-ufw allow 9090
 ufw default deny incoming
 ufw default allow outgoing
 ufw enable
