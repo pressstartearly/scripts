@@ -10,9 +10,9 @@ make altinstall
 mkdir servus
 cd servus
 git clone https://github.com/DedicatedMC/setup-bot.git
-pipenv install --dev
+cd setup-bot
 
-pipenv shell
+pipenv install
 
 
 
