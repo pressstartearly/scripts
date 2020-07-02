@@ -14,7 +14,7 @@ cd setup-bot
 
 pipenv install
 pipenv shell
-
+python3 run.py
 
 
 
