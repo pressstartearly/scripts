@@ -13,6 +13,7 @@ git clone https://github.com/DedicatedMC/setup-bot.git
 cd setup-bot
 
 pipenv install
+pipenv shell
 
 
 
