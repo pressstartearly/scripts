@@ -7,8 +7,8 @@ cd Python-3.8.3
 ./configure --enable-optimizations
 make altinstall
 
-mkdir servus
-cd servus
+mkdir /servus
+cd /servus
 git clone https://github.com/DedicatedMC/setup-bot.git
 cd setup-bot
 
