@@ -4,16 +4,16 @@ ufw allow from 116.203.120.249 to any port 9090
 # INSTALLING NODE_EXPORTER
 
 # Add users for Prometheus and Node Exporter
-sudo useradd --no-create-home --shell /usr/sbin/nologin prometheus
-sudo useradd --no-create-home --shell /bin/false node_exporter
+useradd --no-create-home --shell /usr/sbin/nologin prometheus
+useradd --no-create-home --shell /bin/false node_exporter
 
 # Create Directories
-sudo mkdir /etc/prometheus
-sudo mkdir /var/lib/prometheus
+mkdir /etc/prometheus
+mkdir /var/lib/prometheus
 
 # Change Ownership
-sudo chown prometheus:prometheus /etc/prometheus
-sudo chown prometheus:prometheus /var/lib/prometheus
+chown prometheus:prometheus /etc/prometheus
+chown prometheus:prometheus /var/lib/prometheus
 
 # Install Node Exporter
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
@@ -22,8 +22,8 @@ wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_
 tar xvf node_exporter-0.18.1.linux-amd64.tar.gz
 
 # Copy files to new folder
-sudo cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin
-sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
+cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin
+schown node_exporter:node_exporter /usr/local/bin/node_exporter
 
 # Remove files
 rm -rf node_exporter-0.18.1.linux-amd64.tar.gz node_exporter-0.18.1.linux-amd64
@@ -42,11 +42,11 @@ ExecStart=/usr/local/bin/node_exporter
 WantedBy=multi-user.target" > /etc/systemd/system/node_exporter.service
 
 # Reload
-sudo systemctl daemon-reload
+systemctl daemon-reload
 
 # Start & Enable
-sudo systemctl start node_exporter
-sudo systemctl enable node_exporter
+systemctl start node_exporter
+ssystemctl enable node_exporter
 
 echo "Node Exporter is now succesfully installed"
 
@@ -59,20 +59,20 @@ tar xfz prometheus-2.16.0.linux-amd64.tar.gz
 cd prometheus-2.16.0.linux-amd64
 
 # Copy Files
-sudo cp ./prometheus /usr/local/bin/
-sudo cp ./promtool /usr/local/bin/
+cp ./prometheus /usr/local/bin/
+cp ./promtool /usr/local/bin/
 
 # Change Ownership
-sudo chown prometheus:prometheus /usr/local/bin/prometheus
-sudo chown prometheus:prometheus /usr/local/bin/promtool
+chown prometheus:prometheus /usr/local/bin/prometheus
+chown prometheus:prometheus /usr/local/bin/promtool
 
 # Copy Files
-sudo cp -r ./consoles /etc/prometheus
-sudo cp -r ./console_libraries /etc/prometheus
+cp -r ./consoles /etc/prometheus
+cp -r ./console_libraries /etc/prometheus
 
 # Change Ownership
-sudo chown -R prometheus:prometheus /etc/prometheus/consoles
-sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
+chown -R prometheus:prometheus /etc/prometheus/consoles
+chown -R prometheus:prometheus /etc/prometheus/console_libraries
 
 # Remove Files
 cd .. && rm -rf prometheus-2.16.0.linux-amd64
@@ -95,7 +95,7 @@ scrape_configs:
       - targets: ['localhost:9100']" > /etc/prometheus/prometheus.yml
       
 # Change Ownership
-sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+chown prometheus:prometheus /etc/prometheus/prometheus.yml
 
 # Create SystemD
 echo "[Unit]
@@ -116,10 +116,10 @@ echo "[Unit]
   WantedBy=multi-user.target" > /etc/systemd/system/prometheus.service
   
 # Reload
-sudo systemctl daemon-reload
+systemctl daemon-reload
 
 # Restart & Start
-sudo systemctl enable prometheus
-sudo systemctl start prometheus
+systemctl enable prometheus
+systemctl start prometheus
 
 echo "Done! Make sure that both apps are running properly and not giving any errors"
