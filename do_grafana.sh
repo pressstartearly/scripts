@@ -1,8 +1,8 @@
 apt-get remove -y cockpit
 systemctl stop cockpit.socket
 systemctl disable cockpit.socket
-ufw deny 9090
 ufw allow from 116.203.120.249 to any port 9090
+ufw deny 9090
 apt autoremove -y
 
 # INSTALLING NODE_EXPORTER
