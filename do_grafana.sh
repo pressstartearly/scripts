@@ -1,4 +1,5 @@
 apt-get remove -y cockpit
+ufw deny 9090
 ufw allow from 116.203.120.249 to any port 9090
 
 # INSTALLING NODE_EXPORTER
