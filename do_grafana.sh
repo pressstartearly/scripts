@@ -17,17 +17,17 @@ chown prometheus:prometheus /etc/prometheus
 chown prometheus:prometheus /var/lib/prometheus
 
 # Install Node Exporter
-wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
 
 # Unpack
-tar xvf node_exporter-0.18.1.linux-amd64.tar.gz
+tar xvf node_exporter-1.0.1.linux-amd64.tar.gz
 
 # Copy files to new folder
-cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin
+cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin
 schown node_exporter:node_exporter /usr/local/bin/node_exporter
 
 # Remove files
-rm -rf node_exporter-0.18.1.linux-amd64.tar.gz node_exporter-0.18.1.linux-amd64
+rm -rf node_exporter-1.0.1.linux-amd64.tar.gz node_exporter-1.0.1.linux-amd64
 
 # Setup SystemD
 echo "[Unit]
@@ -55,9 +55,9 @@ echo "Node Exporter is now succesfully installed"
 # INSTALLING PROMETHEUS
 
 sudo apt-get update && apt-get upgrade
-wget https://github.com/prometheus/prometheus/releases/download/v2.16.0/prometheus-2.16.0.linux-amd64.tar.gz
-tar xfz prometheus-2.16.0.linux-amd64.tar.gz
-cd prometheus-2.16.0.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v2.19.2/prometheus-2.19.2.linux-amd64.tar.gz
+tar xfz prometheus-2.19.2.linux-amd64.tar.gz
+cd prometheus-2.19.2.linux-amd64
 
 # Copy Files
 cp ./prometheus /usr/local/bin/
@@ -76,7 +76,7 @@ chown -R prometheus:prometheus /etc/prometheus/consoles
 chown -R prometheus:prometheus /etc/prometheus/console_libraries
 
 # Remove Files
-cd .. && rm -rf prometheus-2.16.0.linux-amd64
+cd .. && rm -rf prometheus-2.19.2.linux-amd64
 
 # Configure Prometheus
 echo "global:
