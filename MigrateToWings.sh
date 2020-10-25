@@ -2,10 +2,6 @@ mkdir -p /etc/pterodactyl
 curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/download/v1.0.1/wings_linux_amd64
 chmod u+x /usr/local/bin/wings
 
-echo "What is the auto config command?"
-read ccconfig
-$ccconfig
-
 # Stop the old daemon.
 systemctl stop wings
 
@@ -39,4 +35,3 @@ StartLimitInterval=600
 WantedBy=multi-user.target" > /etc/systemd/system/wings.service
 
 systemctl daemon-reload
-systemctl enable --now wings
