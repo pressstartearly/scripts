@@ -4,6 +4,7 @@ chmod u+x /usr/local/bin/wings
 
 echo "What is the auto config command?"
 read ccconfig
+echo $ccconfig
 
 # Stop the old daemon.
 systemctl stop wings
